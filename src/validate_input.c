@@ -6,13 +6,13 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/01/17 15:21:51 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:42:49 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate_input(int argc, char **argv)
+int	validate_input(int ac, char **av)
 {
 	int	i;
 	int j;
@@ -20,19 +20,10 @@ int	validate_input(int argc, char **argv)
 
 
 	i = 0;
-	j = 0;
-	
-	
-	while(argc-- > 1 && i < argc)
+	j = 1;
+	while(ac-- > 1)
 	{
-		while (argv[i] && (argv[i] != ' '))
-		{
-		num += ft_atoi(&argv[i]);
-		}
-		if(num < INT_MIN && num > INT_MAX)
-		{
-			
-		}
+		
 	}	
 
 }
