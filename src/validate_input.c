@@ -6,21 +6,19 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/01/26 16:42:49 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/01/28 17:30:30 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	validate_input(int ac, char **av)
 {
 	int	i;
-	int j;
 	size_t num;
 
 
 	i = 0;
-	j = 1;
 	while(ac-- > 1)
 	{
 		
