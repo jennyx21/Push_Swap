@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:11:40 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/01/20 17:50:54 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/05 17:05:46 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 #include <limits.h>
 #include "libft/libft.h"
 
+char find_witespace(char *str);
+
 typedef struct s_push_swap_node
 {
 	int data;
-	t_push_swap_node *head;
-	t_push_swap_node *next;
+	struct s_push_swap_node *next;
 	
 } t_push_swap_node;
 

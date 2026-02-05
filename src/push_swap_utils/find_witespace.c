@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_input.c                                   :+:      :+:    :+:   */
+/*   find_witespace.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/05 17:17:37 by jtruckse         ###   ########.fr       */
+/*   Created: 2026/02/05 16:58:03 by jtruckse          #+#    #+#             */
+/*   Updated: 2026/02/05 17:04:22 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate_input(int ac, char **av)
+char find_witespace(char *str)
 {
-	int	i;
-	int j;
-	int num;
-	char **numbers;
+	int i; 
+	char c;
 
-
-	i = 0;
-	j = 1;
-	while(ac-- > 1)
+	i = 0; 
+	while(str[i])
 	{
-		numbers = ft_split(**av[j], find_witespace(*av[j]));
-		while(numbers[i])
-		{	
-
-			num = ft_atoi(*numbers[i]);
-			if(ft_isdigit(num) == 0)
-			retrun("Error\n")
-			i++
-		}
-	}	
+		if(str[i] == ' ' || str[i] == '\v' || str[i] == '\t' || str[i] == '\r' 
+			|| str[i] == '\n' || str[i] == 'f' )
+			{
+				c = str[i];
+				return (c);
+			}
+		i++;
+	}
+ return (0);
 }
