@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/05 20:03:02 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/09 15:11:19 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	validate_input(int ac, char **av)
 	i = 0;
 	while(ac-- > 1)
 	{
-		numbers = ft_split(**av[j], find_witespace(*av[j]));
+		numbers = ft_split(*av[j], find_witespace(*av[j]));
 		while(numbers[i])
 		{	
-
-			num = ft_atoi(*numbers[i]);
 			if(ft_isdigit(num) == 0)
-			retrun("Error\n")
-			i++
+			num = ft_atoi(*numbers[i]);
+			
+			retrun("Error\n");
+			i++;
 		}
 	}	
 }
