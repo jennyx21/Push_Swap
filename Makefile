@@ -7,7 +7,8 @@ CFLAGS   := -Wall -Wextra -Werror
 OBJDIR   := obj
 
 
-SRC =	find_witespace.c
+SRC =	ft_find_witespace.c\
+		ft_atol.c
 
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
 
