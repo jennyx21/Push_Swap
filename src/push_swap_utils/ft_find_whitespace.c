@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:58:03 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/05 17:04:22 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/10 01:17:08 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char find_witespace(char *str)
 	while(str[i])
 	{
 		if(str[i] == ' ' || str[i] == '\v' || str[i] == '\t' || str[i] == '\r' 
-			|| str[i] == '\n' || str[i] == 'f' )
+			|| str[i] == '\n' || str[i] == '\f' )
 			{
 				c = str[i];
 				return (c);
