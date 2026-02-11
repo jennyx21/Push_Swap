@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_witespace.c                                   :+:      :+:    :+:   */
+/*   ft_find_whitespace.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:58:03 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/10 01:17:08 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/11 20:07:34 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 char find_witespace(char *str)
 {

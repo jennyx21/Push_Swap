@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/11 13:49:39 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/11 19:54:00 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@ int check_if_valid_num(char *str);
 void ft_make_stack(t_stack **stack, int number);
 t_stack *ft_newnode( int num );
 
-t_stack	**validate_input(int ac, char **av)
+t_stack	*validate_input(int ac, char **av)
 {
 	int				i;
 	int				j;
 	long			num;
 	char			**numbers;
-	struct t_stack 	*stack_a;
+	t_stack 		*stack_a;
 	
 	stack_a = NULL;
 	j = 1;
 	while(ac-- > 1)
 	{
-		numbers = ft_split(*av[j], find_witespace(*av[j]));
+		numbers = ft_split(av[j], find_witespace(av[j]));
 		i = 0;
 		while(numbers[i] != NULL)
 		{
 			if(check_if_valid_num(numbers[i]) == 0)
-				return(write(1, "Error\n", 6));
+				return(write(1, "Error\n", 6), NULL);
 			num = ft_atol(numbers[i]);
 			if(num < INT_MIN || num > INT_MAX)
-				return(write(1, "Error\n", 6));
+				return(write(1, "Error\n", 6), NULL);
 			ft_make_stack(&stack_a, num);
 			i++;
 		}
@@ -91,10 +91,18 @@ t_stack *ft_newnode( int num )
 }
 int main(int argc, char **argv)
 {
-	t_stack **list;
-	int i = 0;
+	t_stack *list;
+	t_stack *temp;
+	
 
 	list = validate_input(argc, argv);
-	while(*list -> next != NULL );
-	
+	if (!list)
+		return(0);
+	temp = list;
+	while(temp-> next != NULL )
+		{
+			printf("%d", temp -> data);
+			temp = temp -> next;
+		}
+	return(0);
 }

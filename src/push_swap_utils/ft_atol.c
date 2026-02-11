@@ -6,11 +6,11 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 15:53:03 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/11 10:38:08 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/11 20:06:58 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 long	ft_atol(const char *nptr)
 {
