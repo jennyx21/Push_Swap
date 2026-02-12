@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 15:53:03 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/11 20:06:58 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/12 11:50:30 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atol(const char *nptr)
 {
 	int	i;
 	int	sign;
-	int	sum;
+	long	sum;
 
 	i = 0;
 	sign = 1;

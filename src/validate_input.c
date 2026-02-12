@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/11 19:54:00 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/12 13:14:54 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_stack	*validate_input(int ac, char **av)
 			if(check_if_valid_num(numbers[i]) == 0)
 				return(write(1, "Error\n", 6), NULL);
 			num = ft_atol(numbers[i]);
-			if(num < INT_MIN || num > INT_MAX)
+			if(num < -2147483648 || num > 2147483647)
 				return(write(1, "Error\n", 6), NULL);
 			ft_make_stack(&stack_a, num);
 			i++;
@@ -71,10 +71,14 @@ void ft_make_stack(t_stack **stack, int number)
 	if (*stack == NULL)
 	{
 		*stack = new;
+		return;
 	}
 	temp = *stack;
-	while (temp ->next != 0)
-		temp = temp ->next;
+
+	while (temp ->next != NULL){
+	// 	printf("%p\n", temp ->next);
+	// fflush(stdout);
+		temp = temp ->next;}
 	temp -> next = new;
 }
 
@@ -87,7 +91,30 @@ t_stack *ft_newnode( int num )
 		return(0);
 	new->data = num;
 	new->next =NULL;
-	return(new);		
+	return(new);
+}
+
+int check_double(t_stack **stack)
+{
+	t_stack *runner; 
+	t_stack *temp;
+
+	temp = NULL;
+	runner = *stack;
+	while(1)
+	{
+		if (runner -> next == NULL)
+		return(1);
+		temp = runner->next;
+		while(temp->next != NULL)
+		{
+			if(runner ->data == temp->data)
+			return(0);
+		runner = runner ->next;
+		}
+
+	}
+
 }
 int main(int argc, char **argv)
 {
@@ -101,7 +128,7 @@ int main(int argc, char **argv)
 	temp = list;
 	while(temp-> next != NULL )
 		{
-			printf("%d", temp -> data);
+			printf("%d ", temp -> data);
 			temp = temp -> next;
 		}
 	return(0);
