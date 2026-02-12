@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/12 13:14:54 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/12 19:28:14 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@ t_stack *ft_newnode( int num );
 int check_if_valid_num(char *str);
 void ft_make_stack(t_stack **stack, int number);
 t_stack *ft_newnode( int num );
+int check_double(t_stack **stack);
 
 t_stack	*validate_input(int ac, char **av)
 {
@@ -38,12 +39,18 @@ t_stack	*validate_input(int ac, char **av)
 			if(num < -2147483648 || num > 2147483647)
 				return(write(1, "Error\n", 6), NULL);
 			ft_make_stack(&stack_a, num);
+			if(check_double(&stack_a) == 0)
+				return(write(1, "Error\n", 6), NULL);
 			i++;
 		}
 	j++;
 	}	
 	return (stack_a);
 }
+
+
+
+
 int check_if_valid_num(char *str)
 {
 	int	i;
@@ -75,10 +82,10 @@ void ft_make_stack(t_stack **stack, int number)
 	}
 	temp = *stack;
 
-	while (temp ->next != NULL){
-	// 	printf("%p\n", temp ->next);
-	// fflush(stdout);
-		temp = temp ->next;}
+	while (temp ->next != NULL)
+	{
+		temp = temp ->next;
+	}
 	temp -> next = new;
 }
 
@@ -106,15 +113,10 @@ int check_double(t_stack **stack)
 		if (runner -> next == NULL)
 		return(1);
 		temp = runner->next;
-		while(temp->next != NULL)
-		{
-			if(runner ->data == temp->data)
-			return(0);
+		if(runner ->data == temp->data)
+		return(0);
 		runner = runner ->next;
-		}
-
 	}
-
 }
 int main(int argc, char **argv)
 {
@@ -126,10 +128,11 @@ int main(int argc, char **argv)
 	if (!list)
 		return(0);
 	temp = list;
+	printf("%d ", temp -> data);
 	while(temp-> next != NULL )
 		{
-			printf("%d ", temp -> data);
 			temp = temp -> next;
+			printf("%d ", temp -> data);
 		}
 	return(0);
 }
