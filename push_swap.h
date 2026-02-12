@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:11:40 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/12 19:23:43 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/12 20:59:01 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 
 char	find_witespace(char *str);
 long	ft_atol(const char *nptr);
-int		*ft_check_valid(char *numbers);
+void	ft_check_valid(char **numbers, t_stack **stack);
 
 
 
