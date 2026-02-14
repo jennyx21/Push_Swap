@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 19:52:54 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/12 21:47:03 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/14 19:11:00 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void ft_make_stack(t_stack **stack, int number)
 	t_stack *temp;
 
 	new = ft_newnode(number);
+	// printf("New %d\n", new ->data);
 	
 	if (*stack == NULL)
 	{

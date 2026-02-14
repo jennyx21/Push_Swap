@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/12 21:50:30 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/14 19:32:19 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ t_stack	*validate_input(int ac, char **av)
 	{
 		numbers = ft_split(av[j], find_witespace(av[j]));
 		ft_check_valid(numbers, &stack_a);
-		if(check_double(&stack_a) == 0)
-			return(free(numbers), write(1, "Error\n", 6), NULL);
-	
 		j++;
 	}	
+	if(check_double(&stack_a) == 0)
+		return(free(numbers), write(1, "Error\n", 6), NULL);
 	free(numbers);
 	return (stack_a);
 }
@@ -43,15 +42,18 @@ int check_double(t_stack **stack)
 
 	temp = NULL;
 	runner = *stack;
-	while(1)
+	while(runner != NULL)
 	{
-		if (runner -> next == NULL)
-		return(1);
 		temp = runner->next;
-		if(runner ->data == temp->data)
-		return(0);
+		while(temp != NULL)
+		{
+			if(runner ->data == temp->data)
+				return(0);
+			temp = temp -> next;
+		}
 		runner = runner ->next;
 	}
+	return (1);
 }
 int main(int argc, char **argv)
 {
@@ -64,11 +66,11 @@ int main(int argc, char **argv)
 	if (!list)
 		return(0);
 	temp = list;
-	printf("%d ", temp -> data);
+	printf("%d \n", temp -> data);
 	while(temp-> next != NULL )
 		{
 			temp = temp -> next;
-			printf("%d ", temp -> data);
+			printf("%d \n", temp -> data);
 		}
 
 	// list ist ein liked liset free9list freeed nur einen wert
