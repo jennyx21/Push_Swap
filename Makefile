@@ -12,6 +12,7 @@ SRC =
 			src/push_swap_utils/ft_atol.c\
 			src/push_swap_utils/ft_indexing.c\
 			src/ft_find_witespace.c
+			src/push_swap_utils/ft_stacksize.c
 
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
 
