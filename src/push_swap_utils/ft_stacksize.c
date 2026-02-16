@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_indexing.c                                      :+:      :+:    :+:   */
+/*   ft_stacksize.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 12:51:31 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/16 12:51:38 by jtruckse         ###   ########.fr       */
+/*   Created: 2026/02/16 12:58:38 by jtruckse          #+#    #+#             */
+/*   Updated: 2026/02/16 16:12:34 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void ft_indexing(t_stack **stack)
+int	ft_stacksize(t_stack **stack)
 {
-	t_stack *runner; 
-	t_stack *temp;
-	int i;
+	int		i;
+	t_stack	*head;
 
-	temp = *stack;
-	while(temp != NULL)
-	{	
-		runner = *stack;
-		i = 0;
-		while(runner != NULL)
-		{
-			if(runner -> data < temp ->data)	
-				i++;
-			runner = runner ->next;
-		}
-		temp-> index = i;
-		temp = temp ->next;
+	i = 0;
+	head = *stack;
+	while (head != NULL)
+	{
+		i++;
+		head = head->next;
 	}
+	return (i);
 }
-
