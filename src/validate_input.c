@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/14 19:32:19 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/16 02:30:56 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_stack	*validate_input(int ac, char **av)
 	}	
 	if(check_double(&stack_a) == 0)
 		return(free(numbers), write(1, "Error\n", 6), NULL);
+	ft_indexing(&stack_a);
 	free(numbers);
 	return (stack_a);
 }
@@ -66,11 +67,13 @@ int main(int argc, char **argv)
 	if (!list)
 		return(0);
 	temp = list;
-	printf("%d \n", temp -> data);
+	printf("%d", temp -> data);
+	printf("	%d\n", temp -> index);
 	while(temp-> next != NULL )
 		{
 			temp = temp -> next;
-			printf("%d \n", temp -> data);
+			printf("%d", temp -> data);
+			printf("	%d\n", temp -> index);
 		}
 
 	// list ist ein liked liset free9list freeed nur einen wert

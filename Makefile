@@ -10,6 +10,7 @@ OBJDIR   := obj
 SRC =	
 		src/validate_input.c\
 			src/push_swap_utils/ft_atol.c\
+			src/push_swap_utils/ft_indexing.c\
 			src/ft_find_witespace.c
 
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
