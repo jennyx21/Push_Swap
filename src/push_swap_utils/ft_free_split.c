@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 17:00:21 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 18:38:16 by jtruckse         ###   ########.fr       */
+/*   Created: 2026/02/17 19:33:07 by jtruckse          #+#    #+#             */
+/*   Updated: 2026/02/17 19:58:43 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	sort_small(t_stack **a)
+void	ft_free_split(char **str)
 {
-	int	highest;
+	int	i;
 
-	if (!*a || !(*a)->next)
+	i = 0;
+	if (!str)
 		return ;
-	while (stack_is_sorted(a) != true)
+	while (str[i] != NULL)
 	{
-		highest = find_max_index(a);
-		if (highest == (*a)->index)
-			ra(a);
-		if ((*a)->index == 0 && highest == (*a)->next->index)
-		{
-			rra(a);
-			sa(a);
-		}
-		if ((*a)->index > (*a)->next->index)
-			sa(a);
+		free(str[i]);
+		i++;
 	}
-	return ;
+	free(str);
 }

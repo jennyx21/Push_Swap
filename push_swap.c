@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:24:59 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 13:36:28 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/17 18:49:41 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*temp;
-	t_stack	*stack_b;
 
-	stack_b = NULL;
+	// t_stack	*stack_b;
+	// stack_b = NULL;
 	stack_a = validate_input(argc, argv);
 	if (!stack_a)
 		return (0);
@@ -31,8 +31,8 @@ int	main(int argc, char **argv)
 		printf("%d", temp->data);
 		printf("	%d\n", temp->index);
 	}
-	if (find_max_index(stack_a) < 3)
-		sort_small(stack_a, stack_b);
+	if (find_max_index(&stack_a) < 3)
+		sort_small(&stack_a);
 	free(stack_a);
 	return (0);
 }

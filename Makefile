@@ -3,7 +3,7 @@ NAME     := push_swap
 CC       := gcc
 AR       := ar
 ARFLAGS  := rcs
-CFLAGS   := -Wall -Wextra -Werror
+CFLAGS   := -Wall -Wextra -Werror -g
 OBJDIR   := obj
 LIBFT_DIR := libft
 LIBFT     := $(LIBFT_DIR)/libft.a
@@ -20,6 +20,8 @@ SRC =	push_swap.c\
 		src/push_swap_utils/ft_atol.c\
 		src/push_swap_utils/ft_indexing.c\
 		src/push_swap_utils/ft_find_whitespace.c\
+		src/sort/stack_is_sorted.c\
+		src/sort/sort_three.c\
 		src/push_swap_utils/ft_stacksize.c
 
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))

@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:11:40 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 13:27:45 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/17 19:37:20 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_stack
 {
@@ -30,6 +31,8 @@ void				ft_indexing(t_stack **stack);
 int					find_max_index(t_stack **stack);
 int					find_mid_index(t_stack **stack);
 int					ft_stacksize(t_stack **stack);
+t_stack				*validate_input(int ac, char **av);
+void				ft_free_split(char **str);
 
 void				pb(t_stack **stack_a, t_stack **stack_b);
 void				pa(t_stack **stack_b, t_stack **stack_a);
@@ -42,5 +45,8 @@ void				rr(t_stack **stack_a, t_stack **stack_b);
 void				sa(t_stack **stack_a);
 void				sb(t_stack **stack_b);
 void				ss(t_stack **stack_a, t_stack **stack_b);
+
+bool				stack_is_sorted(t_stack **a);
+void				sort_small(t_stack **a);
 
 #endif

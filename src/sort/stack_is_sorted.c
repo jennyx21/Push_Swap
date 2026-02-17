@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   stack_is_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 17:00:21 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 18:38:16 by jtruckse         ###   ########.fr       */
+/*   Created: 2026/02/17 17:11:42 by jtruckse          #+#    #+#             */
+/*   Updated: 2026/02/17 18:29:15 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	sort_small(t_stack **a)
+bool	stack_is_sorted(t_stack **a)
 {
-	int	highest;
-
-	if (!*a || !(*a)->next)
-		return ;
-	while (stack_is_sorted(a) != true)
+	if ((*a) == NULL)
+		return (1);
+	while ((*a)->next)
 	{
-		highest = find_max_index(a);
-		if (highest == (*a)->index)
-			ra(a);
-		if ((*a)->index == 0 && highest == (*a)->next->index)
-		{
-			rra(a);
-			sa(a);
-		}
-		if ((*a)->index > (*a)->next->index)
-			sa(a);
+		if ((*a)->index < (*a)->next->index)
+			return (true);
+		*a = (*a)->next;
 	}
-	return ;
+	return (false);
 }
