@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/16 17:00:19 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:22:20 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,26 +57,4 @@ int	check_double(t_stack **stack)
 	return (1);
 }
 
-int	main(int argc, char **argv)
-{
-	t_stack	*list;
-	t_stack	*temp;
 
-	list = validate_input(argc, argv);
-	if (!list)
-		return (0);
-	temp = list;
-	printf("%d", temp->data);
-	printf("	%d\n", temp->index);
-	while (temp->next != NULL)
-	{
-		temp = temp->next;
-		printf("%d", temp->data);
-		printf("	%d\n", temp->index);
-	}
-	if (temp->index < 3)
-		// list ist ein liked liset free9list freeed nur einen wert
-		// neue funktion schreiebn die einmal durch die liste itteriert und dann alles freed
-		free(list);
-	return (0);
-}

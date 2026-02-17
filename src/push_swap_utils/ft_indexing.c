@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:51:31 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/16 17:39:11 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/17 12:05:38 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	find_mid_index(t_stack **stack)
 	int	mid;
 	int	max;
 
-	max = find_max_index(&stack);
+	max = find_max_index(stack);
 	mid = max / 2;
 	return (mid);
 }

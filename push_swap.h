@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:11:40 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/16 16:13:41 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:27:45 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ char				find_witespace(char *str);
 long				ft_atol(const char *nptr);
 void				ft_check_valid(char **numbers, t_stack **stack);
 void				ft_indexing(t_stack **stack);
+int					find_max_index(t_stack **stack);
+int					find_mid_index(t_stack **stack);
 int					ft_stacksize(t_stack **stack);
+
+void				pb(t_stack **stack_a, t_stack **stack_b);
+void				pa(t_stack **stack_b, t_stack **stack_a);
+void				rra(t_stack **stack_a);
+void				rrb(t_stack **stack_b);
+void				rrr(t_stack **stack_a, t_stack **stack_b);
+void				ra(t_stack **stack_a);
+void				rb(t_stack **stack_b);
+void				rr(t_stack **stack_a, t_stack **stack_b);
+void				sa(t_stack **stack_a);
+void				sb(t_stack **stack_b);
+void				ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif
