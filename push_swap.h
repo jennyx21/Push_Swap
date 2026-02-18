@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:11:40 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/18 15:21:25 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 22:42:20 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void				ss(t_stack **stack_a, t_stack **stack_b);
 bool				stack_is_sorted(t_stack **a);
 void				sort_two(t_stack **a);
 void				sort_three(t_stack **a);
-void				ft_sort(int ac, t_stack **a);
+void				ft_sort(int ac, t_stack **a, t_stack **b);
+void				sort_up_to_six(t_stack **a, t_stack **b);
 
 #endif

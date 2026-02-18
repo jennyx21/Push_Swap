@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:53:00 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/18 15:30:31 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 22:12:34 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,25 @@ void	swap(t_stack **stack)
 
 void	sa(t_stack **stack_a)
 {
+	if (!stack_a)
+		return ;
 	swap(stack_a);
-	ft_putendl_fd("sa\n", 1);
+	ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_stack **stack_b)
 {
+	if (!stack_b)
+		return ;
 	swap(stack_b);
-	ft_putendl_fd("sb\n", 1);
+	ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
+	if (!stack_b && !stack_a)
+		return ;
 	swap(stack_a);
 	swap(stack_b);
-	ft_putendl_fd("ss\n", 1);
+	ft_putendl_fd("ss", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:00:21 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/18 16:09:10 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 22:38:58 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,36 @@ void	sort_three(t_stack **a)
 			rra(a);
 			sa(a);
 		}
-		else
+		else if ((*a)->index > (*a)->next->index)
 			sa(a);
+		else if (max == (*a)->next->index
+			&& (*a)->index > (*a)->next->next->index)
+			rra(a);
+	}
+}
+
+void	sort_up_to_six(t_stack **a, t_stack **b)
+{
+	int	max;
+	int	count;
+
+	count = 0;
+	max = find_max_index(a);
+	while (max > 2)
+	{
+		if ((*a)->index != count)
+			ra(a);
+		if ((*a)->index == count)
+		{
+			pb(a, b);
+			count++;
+			max--;
+		}
+	}
+	sort_three(a);
+	while (count-- > 0)
+	{
+		pa(b, a);
 	}
 	return ;
 }
