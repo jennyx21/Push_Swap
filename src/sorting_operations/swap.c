@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:53:00 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 12:05:14 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 15:30:31 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	swap(t_stack **stack)
 	int		data;
 	int		index;
 
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
 	head = *stack;
 	next = head->next;
 	if (ft_stacksize(stack) < 2)
-		return ;
-	if (!head)
 		return ;
 	data = head->data;
 	index = head->index;

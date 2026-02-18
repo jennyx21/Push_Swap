@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 19:52:54 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 18:46:03 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 12:24:09 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	ft_check_valid(char **numbers, t_stack **stack_a)
 		if (check_if_valid_num(numbers[i]) == 0)
 			error_case();
 		num = ft_atol(numbers[i]);
-		free(numbers[i]);
 		if (num < -2147483648 || num > 2147483647)
 			error_case();
 		ft_make_stack(stack_a, num);
 		i++;
 	}
+	ft_free_split(numbers);
 }
 
 int	check_if_valid_num(char *str)

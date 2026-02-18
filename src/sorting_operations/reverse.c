@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 14:50:40 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 12:00:12 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 16:21:27 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	reverse_rotate(t_stack **stack)
 		return ;
 	if (ft_stacksize(stack) < 2)
 		return ;
-	while (last != NULL)
+	while (last->next != NULL)
 		last = last->next;
 	*last->next = *first;
 	*first = *first->next;

@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:24:59 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 18:49:41 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 15:21:16 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 
 	// t_stack	*stack_b;
 	// stack_b = NULL;
+	if (argc < 1)
+		return (0);
 	stack_a = validate_input(argc, argv);
 	if (!stack_a)
 		return (0);
@@ -31,10 +33,7 @@ int	main(int argc, char **argv)
 		printf("%d", temp->data);
 		printf("	%d\n", temp->index);
 	}
-	if (find_max_index(&stack_a) < 3)
-		sort_small(&stack_a);
-	free(stack_a);
+	ft_sort(argc, &stack_a);
+	ft_free_stack(&stack_a);
 	return (0);
 }
-// list ist ein liked liset free9list freeed nur einen wert
-// neue funktion schreiebn die einmal durch die liste itteriert und dann alles freed

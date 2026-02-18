@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 19:37:50 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 12:22:27 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@ t_stack	*validate_input(int ac, char **av)
 	while (ac-- > 1)
 	{
 		numbers = ft_split(av[j], find_witespace(av[j]));
+		if (!numbers)
+			return (NULL);
 		ft_check_valid(numbers, &stack_a);
+		// ft_free_split(numbers);
 		j++;
 	}
 	if (check_double(&stack_a) == 0)
-		return (free(numbers), write(1, "Error\n", 6), NULL);
+		return (write(1, "Error\n", 6), NULL);
 	ft_indexing(&stack_a);
-	ft_free_split(numbers);
 	return (stack_a);
 }
 

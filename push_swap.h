@@ -6,7 +6,7 @@
 /*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:11:40 by jtruckse          #+#    #+#             */
-/*   Updated: 2026/02/17 19:37:20 by jtruckse         ###   ########.fr       */
+/*   Updated: 2026/02/18 15:21:25 by jtruckse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int					find_max_index(t_stack **stack);
 int					find_mid_index(t_stack **stack);
 int					ft_stacksize(t_stack **stack);
 t_stack				*validate_input(int ac, char **av);
+void				ft_free_stack(t_stack **stack);
 void				ft_free_split(char **str);
 
 void				pb(t_stack **stack_a, t_stack **stack_b);
@@ -47,6 +48,8 @@ void				sb(t_stack **stack_b);
 void				ss(t_stack **stack_a, t_stack **stack_b);
 
 bool				stack_is_sorted(t_stack **a);
-void				sort_small(t_stack **a);
+void				sort_two(t_stack **a);
+void				sort_three(t_stack **a);
+void				ft_sort(int ac, t_stack **a);
 
 #endif
