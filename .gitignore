@@ -1,3 +1,6 @@
 .gitignore 
-guide.txt
-a.out
+**.txt
+**.out
+**.a
+**obj
+push_swap
