@@ -14,8 +14,8 @@
 
 long	ft_atol(const char *nptr)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	sum;
 
 	i = 0;

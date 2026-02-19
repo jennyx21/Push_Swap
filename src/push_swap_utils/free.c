@@ -27,11 +27,13 @@ void	ft_free_stack(t_stack **stack)
 		temp = next;
 	}
 }
+
 void	ft_free_split(char **str)
 {
-	int i ;
+	int	i;
+
 	if (!str)
-		return;
+		return ;
 	i = 0;
 	while (str[i])
 	{

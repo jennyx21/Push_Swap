@@ -24,7 +24,6 @@ static int	count_words(const char *s, char c)
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			count++;
 		i++;
-
 	}
 	return (count);
 }

@@ -12,21 +12,21 @@
 
 #include "../../push_swap.h"
 
-char find_witespace(char *str)
+char	find_witespace(char *str)
 {
-	int i; 
-	char c;
+	int		i;
+	char	c;
 
-	i = 0; 
-	while(str[i])
+	i = 0;
+	while (str[i])
 	{
-		if(str[i] == ' ' || str[i] == '\v' || str[i] == '\t' || str[i] == '\r' 
-			|| str[i] == '\n' || str[i] == '\f' )
-			{
-				c = str[i];
-				return (c);
-			}
+		if (str[i] == ' ' || str[i] == '\v' || str[i] == '\t' || str[i] == '\r'
+			|| str[i] == '\n' || str[i] == '\f')
+		{
+			c = str[i];
+			return (c);
+		}
 		i++;
 	}
- return (0);
+	return (0);
 }

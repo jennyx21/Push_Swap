@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_sort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtruckse <jtruckse@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 16:27:24 by jtruckse          #+#    #+#             */
+/*   Updated: 2026/02/18 12:22:27 by jtruckse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 void	key_sort(t_stack **a, t_stack **b)
@@ -25,9 +37,9 @@ void	key_sort(t_stack **a, t_stack **b)
 
 void	key_sort_back(t_stack **a, t_stack **b)
 {
-	int max;
-	int size;
-	int pos;
+	int	max;
+	int	size;
+	int	pos;
 
 	while ((*b))
 	{

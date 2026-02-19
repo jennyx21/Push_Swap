@@ -60,7 +60,6 @@ void	ft_make_stack(t_stack **stack, int number)
 	t_stack	*temp;
 
 	new = ft_newnode(number);
-	// printf("New %d\n", new ->data);
 	if (*stack == NULL)
 	{
 		*stack = new;
@@ -72,7 +71,6 @@ void	ft_make_stack(t_stack **stack, int number)
 		temp = temp->next;
 	}
 	temp->next = new;
-	// free(new);
 }
 
 t_stack	*ft_newnode(int num)
@@ -86,6 +84,7 @@ t_stack	*ft_newnode(int num)
 	new->next = NULL;
 	return (new);
 }
+
 void	error_case(void)
 {
 	write(1, "Error\n", 6);

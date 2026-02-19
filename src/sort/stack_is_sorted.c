@@ -14,7 +14,7 @@
 
 bool	stack_is_sorted(t_stack **a)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!(*a) || !*a)
 		return (0);

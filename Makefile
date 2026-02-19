@@ -3,7 +3,7 @@ NAME     := push_swap
 CC       := gcc
 AR       := ar
 ARFLAGS  := rcs
-CFLAGS   := -Wall -Wextra -Werror -g 
+CFLAGS   := -Wall -Wextra -Werror -g -fsanitize=address
 OBJDIR   := obj
 LIBFT_DIR := libft
 LIBFT     := $(LIBFT_DIR)/libft.a

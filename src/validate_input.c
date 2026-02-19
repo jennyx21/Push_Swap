@@ -29,7 +29,6 @@ t_stack	*validate_input(int ac, char **av)
 		if (!numbers)
 			return (NULL);
 		ft_check_valid(numbers, &stack_a);
-		// ft_free_split(numbers);
 		j++;
 	}
 	if (check_double(&stack_a) == 0)
