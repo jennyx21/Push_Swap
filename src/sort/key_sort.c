@@ -6,7 +6,7 @@ void	key_sort(t_stack **a, t_stack **b)
 	int	range;
 
 	count = 0;
-	range = ft_squareroot(ft_stacksize(a)) * 1.5;
+	range = ft_squareroot(ft_stacksize(a)) * 1.3;
 	while ((*a))
 	{
 		if ((*a)->index <= count + range)
