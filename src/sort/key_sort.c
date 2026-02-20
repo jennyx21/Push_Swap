@@ -27,55 +27,38 @@ int	ft_stacksize_and_pos(t_stack **stack)
 	}
 	return (i);
 }
-long	calc_value(t_stack *stack, int n)
-{
-	long	value;
-	int		num;
-	t_stack *temp;
-
-	temp = stack;
-	while (temp != NULL && temp->pos != n)
-	{
-		num = temp->index;
-		value += num;
-		temp = temp ->next;
-		
-	}
-	return (value);
-}
 
 void	get_from_back(t_stack **a, t_stack **b, int range, int count)
 {
-	while(1)
-	{
-	if ((*a)->index <= count + range)
-	{
-		pb(a, b);
-		if ((*b)->index <= count)
-			rb(b);
-		return ;
-	}
-	else
-	rra(a);
-	}
-}
-
-void	get_from_front(t_stack **a, t_stack **b, int range, int count)
-{
-	while(1)
+	while (1)
 	{
 		if ((*a)->index <= count + range)
 		{
 			pb(a, b);
 			if ((*b)->index <= count)
 				rb(b);
-			return;
+			return ;
 		}
 		else
-		ra(a);
+			rra(a);
 	}
 }
 
+void	get_from_front(t_stack **a, t_stack **b, int range, int count)
+{
+	while (1)
+	{
+		if ((*a)->index <= count + range)
+		{
+			pb(a, b);
+			if ((*b)->index <= count)
+				rb(b);
+			return ;
+		}
+		else
+			ra(a);
+	}
+}
 
 void	key_sort(t_stack **a, t_stack **b)
 {
@@ -100,8 +83,6 @@ void	key_sort(t_stack **a, t_stack **b)
 	key_sort_back(a, b);
 	return ;
 }
-
-
 
 void	key_sort_back(t_stack **a, t_stack **b)
 {
