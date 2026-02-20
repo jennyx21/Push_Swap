@@ -1,9 +1,0 @@
-.gitignore 
-**.txt
-**.out
-**.a
-**obj
-push_swap
-push_swap_visualizer
-checker_linux
-imgui.ini
