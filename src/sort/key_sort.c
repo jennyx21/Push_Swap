@@ -12,28 +12,96 @@
 
 #include "../../push_swap.h"
 
-void	key_sort(t_stack **a, t_stack **b)
+int	ft_stacksize_and_pos(t_stack **stack)
 {
-	int	count;
-	int	range;
+	int		i;
+	t_stack	*head;
 
-	count = 0;
-	range = ft_squareroot(ft_stacksize(a)) * 1.3;
-	while ((*a))
+	i = 0;
+	head = *stack;
+	while (head != NULL)
+	{
+		i++;
+		head->pos = i;
+		head = head->next;
+	}
+	return (i);
+}
+long	calc_value(t_stack *stack, int n)
+{
+	long	value;
+	int		num;
+	t_stack *temp;
+
+	temp = stack;
+	while (temp != NULL && temp->pos != n)
+	{
+		num = temp->index;
+		value += num;
+		temp = temp ->next;
+		
+	}
+	return (value);
+}
+
+void	get_from_back(t_stack **a, t_stack **b, int range, int count)
+{
+	while(1)
+	{
+	if ((*a)->index <= count + range)
+	{
+		pb(a, b);
+		if ((*b)->index <= count)
+			rb(b);
+		return ;
+	}
+	else
+	rra(a);
+	}
+}
+
+void	get_from_front(t_stack **a, t_stack **b, int range, int count)
+{
+	while(1)
 	{
 		if ((*a)->index <= count + range)
 		{
 			pb(a, b);
 			if ((*b)->index <= count)
 				rb(b);
-			count++;
+			return;
 		}
 		else
-			ra(a);
+		ra(a);
+	}
+}
+
+
+void	key_sort(t_stack **a, t_stack **b)
+{
+	int		count;
+	int		range;
+	int		size;
+	long	value;
+	long	comp;
+
+	count = 0;
+	while ((*a))
+	{
+		range = ft_squareroot(ft_stacksize(a)) * 2;
+		size = ft_stacksize_and_pos(a);
+		value = calc_value(*a, size);
+		comp = calc_value(*a, size / 2);
+		if (value / 2 > comp + range)
+			get_from_front(a, b, range, count++);
+		else
+			get_from_back(a, b, range, count++);
 	}
 	key_sort_back(a, b);
 	return ;
 }
+
+
 
 void	key_sort_back(t_stack **a, t_stack **b)
 {

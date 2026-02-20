@@ -3,7 +3,8 @@ NAME     := push_swap
 CC       := gcc
 AR       := ar
 ARFLAGS  := rcs
-CFLAGS   := -Wall -Wextra -Werror -g -fsanitize=address
+# DEBUGFLAGS := -g -fsanitize=address 
+CFLAGS   := -Wall -Wextra -Werror $(DEBUGFLAGS)
 OBJDIR   := obj
 LIBFT_DIR := libft
 LIBFT     := $(LIBFT_DIR)/libft.a
@@ -58,6 +59,7 @@ $(NAME): $(OBJ) $(LIBFT)
 	@echo
 	@echo "push_swap archive built successfully"
 	@echo
+
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)

@@ -14,12 +14,16 @@
 
 void	ft_sort(int ac, t_stack **a, t_stack **b)
 {
-	if (ac == 3)
-		sort_two(a);
-	else if (ac == 4)
-		sort_three(a);
-	else if (ac >= 5 && ac <= 8)
-		sort_up_to_six(a, b);
-	else
-		key_sort(a, b);
+	while (stack_is_sorted(a) == false)
+	{
+		if (ac == 3)
+			sort_two(a);
+		else if (ac == 4)
+			sort_three(a);
+		else if (ac >= 5 && ac <= 8)
+			sort_up_to_six(a, b);
+		else
+			key_sort(a, b);
+	}
+	return ;
 }

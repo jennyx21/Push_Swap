@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
-	if (argc < 1)
+	if (argc <= 2)
 		return (0);
 	stack_a = validate_input(argc, argv);
 	if (!stack_a)

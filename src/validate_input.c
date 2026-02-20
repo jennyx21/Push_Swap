@@ -50,7 +50,10 @@ int	check_double(t_stack **stack)
 		while (temp != NULL)
 		{
 			if (runner->data == temp->data)
+			{
+				ft_free_stack(stack);
 				return (0);
+			}
 			temp = temp->next;
 		}
 		runner = runner->next;
